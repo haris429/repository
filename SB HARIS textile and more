@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>My Portfolio | Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav>
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1>Hi, I’m [Your Name]</h1>
+    <p>Front‑end developer & designer</p>
+    <button id="sayHello">Say Hello</button>
+  </header>
+  <section class="projects">
+    <h2>Featured Projects</h2>
+    <div class="card">
+      <img src="assets/project1.jpg" alt="Project 1">
+      <h3>Project One</h3>
+      <p>Creative web design using HTML/CSS/JS</p>
+    </div>
+  </section>
+  <script src="js/main.js"></script>
+</body>
+</html>
+<section class="about-me">
+  <img src="assets/profile.jpg" alt="Your Profile" class="profile-pic">
+  <h2>About Me</h2>
+  <p>I’m a developer passionate about creating engaging user interfaces...</p>
+</section>
+<section class="contact">
+  <h2>Contact</h2>
+  <p>Find me here:</p>
+  <div class="map-container">
+    <!-- Embed Google Map, responsive -->
+    <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL"
+            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Your message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+document.getElementById('sayHello').onclick = () => alert('Hello from my portfolio!');
+document.getElementById('contactForm').onsubmit = e => {
+  e.preventDefault();
+  alert('Thanks for reaching out, ' + e.target.name.value + '!');
+};
+.map-container {
+  position: relative;
+  padding-bottom: 50%;
+}
+.map-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
